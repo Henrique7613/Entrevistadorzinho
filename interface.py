@@ -1,0 +1,22 @@
+nome=input("Digite seu nome: \n")
+dn=(input("Digite sua data de nascimento: \n "))
+print('Ola', nome, 'sua data de nascimento é', dn,". \n")
+print('isso está correto? (sim/não) \n')
+correto=input()
+if correto == 'sim':
+    print('Obrigado por confirmar! \n')
+else:
+    print('Por favor, digite novamente seu nome: \n')
+    nome=input()    
+    print('Por favor, digite novamente sua data de nascimento: \n')
+    dn=(input())
+    print('Obrigado por confirmar! \n')   
+      
+registro = open("registro.txt", "a")
+registro.write(f"Nome: {nome}, Data de Nascimento: {dn}\n")
+registro.close()
+print('Seus dados foram salvos com sucesso! \n')   
+registro= open("registro.txt", "r")
+print('Seus dados salvos são: \n')   
+print(registro.read())
+registro.close()    
